@@ -4,6 +4,16 @@
   border: 1px solid #a7a1a1;
   padding: 30px 20px;
 }
+.add-form__add {
+  background-color: #333030;
+  border-radius: 50%;
+  border: #b3a3a3;
+  color: white;
+  font-size: 1.7vw;
+  padding: 4px 11px;
+  outline: none;
+  margin-left: 10px;
+}
 .add-form__input {
   width: 50%;
   background: #f6f6f6;
@@ -23,6 +33,7 @@
   font-family: "Rajdhani", sans-serif;
   outline: none;
   font-size: 1.3vw;
+  margin-right: 10px;
 }
 
 .input__error {
