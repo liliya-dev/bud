@@ -1,0 +1,21 @@
+.third {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+
+  &__wrapper {
+    display: flex;
+    width: 50%;
+  }
+
+  &__tab {
+    width: 49%;
+    height: 50px;
+    background-color:  #E5E5E5;
+    border: 1px solid #4F4F4F;
+    border-bottom: none;
+    font-family: 'Rajdhani', sans-serif;
+    outline: none;
+    font-size: 1.3vw;
+  }
+}

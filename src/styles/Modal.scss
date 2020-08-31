@@ -1,0 +1,77 @@
+.modal {
+  background-color: rgb(250, 248, 248);
+  width: 90%;
+  border: 1px solid rgba(85, 85, 85, 0.66);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.66);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  
+  &__pages {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__page-button--active {
+    background-color: rgb(185, 197, 185);
+  }
+
+  &__item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__button {
+    padding: 10px 15px;
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    outline: none;
+    font-size: 1.3vw;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__cancel-button {
+    margin-right: 20px;
+    color: #333333;
+    background-color: rgb(250, 248, 248);
+
+  }
+
+  &__ok-button {
+    background: #333333;
+    border: none;
+    color: #FFFFFF;
+  }
+}
+
+.options {
+  list-style-type: none;
+  border: 1px solid rgba(85, 85, 85, 0.66);
+  box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.66);
+  max-height: 330px;
+  overflow-y: scroll;
+
+  &__item {
+    height: 50px;
+    line-height: 30px;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(85, 85, 85, 0.66);
+  }
+
+  &__active-item {
+    background-color: rgb(185, 197, 185);
+  }
+
+  &__text {
+    margin: 0 10px 0 0;
+  }
+}

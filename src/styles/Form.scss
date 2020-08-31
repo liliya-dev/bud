@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+
+  &__input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    padding: 10px;
+  }
+
+  &__button {
+    padding: 1vw 0;
+    background: #333333;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

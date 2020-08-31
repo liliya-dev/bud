@@ -1,0 +1,68 @@
+.modal {
+  background-color: #faf8f8;
+  width: 90%;
+  border: 1px solid rgba(85, 85, 85, 0.66);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.66);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.modal__pages {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.modal__page-button--active {
+  background-color: #b9c5b9;
+}
+.modal__item {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.modal__button {
+  padding: 10px 15px;
+  border: none;
+  font-family: "Rajdhani", sans-serif;
+  outline: none;
+  font-size: 1.3vw;
+}
+.modal__button-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.modal__cancel-button {
+  margin-right: 20px;
+  color: #333333;
+  background-color: #faf8f8;
+}
+.modal__ok-button {
+  background: #333333;
+  border: none;
+  color: #FFFFFF;
+}
+
+.options {
+  list-style-type: none;
+  border: 1px solid rgba(85, 85, 85, 0.66);
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.66);
+  max-height: 330px;
+  overflow-y: scroll;
+}
+.options__item {
+  height: 50px;
+  line-height: 30px;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(85, 85, 85, 0.66);
+}
+.options__active-item {
+  background-color: #b9c5b9;
+}
+.options__text {
+  margin: 0 10px 0 0;
+}
+
+/*# sourceMappingURL=Modal.css.map */

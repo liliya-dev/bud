@@ -1,0 +1,32 @@
+@import './Navigation.scss';
+@import './typography.scss';
+@import './Form.scss';
+@import './LeftNav.scss';
+@import './First.scss';
+@import './Modal.scss';
+@import './Second.scss';
+@import './Third.scss';
+@import './AddForm.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 5%;
+  position: relative;
+  background-color:  #E5E5E5;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.App {
+  position: relative;
+}

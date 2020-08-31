@@ -1,0 +1,43 @@
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__item {
+    display: block;
+    padding: 20px;
+  }
+  &__link {
+    width: 100%;
+    text-decoration: none;
+  }
+  &__link.active > p {
+    color: #4F4F4F;;
+  }
+  &__text {
+    color: black;
+  }
+
+  &__button {
+    border: none;
+    background: none;
+  }
+
+  &__general {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    width: 30px;
+    height: 40px;
+    background: url('../../public/images/cart.png');
+  }
+}

@@ -1,0 +1,21 @@
+.first {
+  align-items: center;
+  justify-content: center;
+
+  &__button {
+    padding: 1vw 1vw;
+    background: #333333;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+  }
+}
+
+.page {
+  position: absolute;
+  left: 30%;
+  width: 70%;
+  height: 500px;
+  top: 0;
+  display: flex;
+}

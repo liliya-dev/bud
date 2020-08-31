@@ -1,0 +1,21 @@
+.left-nav {
+  list-style: none;
+  width: 20%;
+
+  &__link {
+    text-decoration: none;
+    color: #4F4F4F;
+    display: block;
+    padding: 10px;
+    border: 1px solid #4F4F4F;
+    
+  }
+
+  &__link:hover {
+    cursor: pointer;
+  }
+
+  &__link.active {
+    color: black;
+  }
+}

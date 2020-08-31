@@ -1,0 +1,34 @@
+body {
+  font-family: 'Rajdhani', sans-serif;
+}
+.navigation {
+  &__text {
+    font-size: 2vw;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    font-family: 'Rajdhani', sans-serif;
+    color: #4F4F4F;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin: 0;
+  }
+}
+
+.form {
+  &__button {
+    font-size: 1vw;
+    line-height: 1.1vw;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__error {
+    color: red;
+    font-size: 0.8vw;
+    margin: 0 10px;
+    margin-bottom: 2vw;
+  }
+}
+
