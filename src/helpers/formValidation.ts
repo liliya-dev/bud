@@ -3,7 +3,7 @@ export const formValidation = (password: string, confirmedPassword: string, name
     name: '',
     email: '',
     password: '',
-    confirmedPassword: ''
+    confirmedPassword: '',
   }
 
   if (!(name.trim()).length) {
@@ -22,12 +22,18 @@ export const formValidation = (password: string, confirmedPassword: string, name
   return errors;
 }
 
-export const addFormValidation = (phone: string, surname: string, name: string, email: string) => {
+export const addFormValidation = (
+  phone: string, surname: string, name: string, email: string, 
+  isPhone: boolean, isMail: boolean, additionalPhone: string,
+  additionalEmail: string
+) => {
   const errors = {
     name: '',
     email: '',
     surname: '',
     phone: '',
+    additionalPhone: '',
+    additionalMail: '',
   }
 
   const regMail = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b/;
@@ -49,6 +55,13 @@ export const addFormValidation = (phone: string, surname: string, name: string, 
     errors.phone = 'Enter the correct phone please'
   }
 
+  if (isPhone && !regPhone.test(additionalPhone)) {
+    errors.additionalPhone = 'Enter the correct phone please'
+  }
+
+  if (isMail && !regMail.test(additionalEmail)) {
+    errors.additionalMail = 'Enter the correct email please'
+  }
 
   return errors;
 }

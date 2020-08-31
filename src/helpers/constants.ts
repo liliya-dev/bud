@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:3002';
+export const baseUrl = 'http://145.239.95.160:3002';
 
 export const checkToken = async (value: string) => {
   const response = await fetch(`http://localhost:3002/check`, 

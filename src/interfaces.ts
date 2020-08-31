@@ -1,15 +1,19 @@
-export interface Device {
-  id: number;
-  phoneId: string;
-  name: string; 
-  priceDiscount: number;
-  capacity: string; 
-  ram: string;
-  image: string;
-  category: string;
-  itemId: string;
-  priceRegular: number;
-  color: string; 
-  year: number;
-  screen: string;
+export interface User {
+  email: string;
+  name: string;
+  surname: string;
+  id: string;
+  phone: string;
+}
+
+export interface InitialState {
+  email: string;
+  name: string;
+  surname: string;
+  phone: string;
+  additionalPhone: string;
+  additionalMail: string;
+  isPhoneVisible: boolean;
+  isMailVisible: boolean;
+  id: string;
 }

@@ -7,7 +7,6 @@ export const fetchLogData = async (method: string, url: string, dataFromUser: an
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify(dataFromUser)
     }
   )
@@ -23,7 +22,6 @@ export const getData = async (url: string) => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      credentials: 'include',
     }
   )
   const data = await response.json();
@@ -40,10 +38,7 @@ export const fetchLogDataWithToken = async (method: string, url: string, dataFro
         'Authorization': `Bearer ${token}`,
         Accept: 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify(dataFromUser)
     }
   )
-  console.log(23)
-  console.log(response)
 }

@@ -17,5 +17,11 @@
     font-family: 'Rajdhani', sans-serif;
     outline: none;
     font-size: 1.3vw;
+
+    &.third__tab--active {
+      background: #333333;
+      border: none;
+      color: #FFFFFF;
+    }
   }
 }

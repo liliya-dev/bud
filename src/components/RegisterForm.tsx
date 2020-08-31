@@ -33,7 +33,7 @@ export const RegisterForm: React.FC = () => {
 
   const tryToMakeRegistration = async () => {
     const data = await fetchLogData('POST', '/register', { email, password, name });
-      if (data.isRegistrationDone) { 
+    if (data.isRegistrationDone) { 
         history.push('/enter');
       }
   
