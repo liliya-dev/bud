@@ -1,0 +1,40 @@
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation__wrapper {
+  display: flex;
+}
+.navigation__item {
+  display: block;
+  padding: 20px;
+}
+.navigation__link {
+  width: 100%;
+  text-decoration: none;
+}
+.navigation__link.active > p {
+  color: #4F4F4F;
+}
+.navigation__text {
+  color: black;
+}
+.navigation__button {
+  border: none;
+  background: none;
+}
+.navigation__general {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation__img {
+  width: 30px;
+  height: 40px;
+  background: url("../../public/images/cart.png");
+}
+
+/*# sourceMappingURL=Navigation.css.map */
