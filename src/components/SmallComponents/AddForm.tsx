@@ -18,6 +18,7 @@ export const AddForm = () => {
     const withoutErrors = Object.values(errors).every(value => value === '');
     if (withoutErrors) {
       console.log('okay');
+      
     } else {
       setInputErrors(errors);
     }
