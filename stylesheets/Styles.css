@@ -34,7 +34,6 @@
 .navigation__img {
   width: 30px;
   height: 40px;
-  background: url("../../public/images/cart.png");
 }
 
 body {
@@ -346,4 +345,3 @@ a, button {
   position: relative;
 }
 
-/*# sourceMappingURL=Styles.css.map */
