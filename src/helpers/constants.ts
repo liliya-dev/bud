@@ -1,4 +1,4 @@
-export const baseUrl = 'https://radiant-woodland-92651.herokuapp.com/';
+export const baseUrl = 'https://radiant-woodland-92651.herokuapp.com';
 
 export const zeroState = {
   name: '',
