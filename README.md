@@ -1,13 +1,14 @@
-[DEMO LINK](https://radiant-woodland-92651.herokuapp.com/#/)
+[DEMO LINK](http://145.239.95.160:3002/#/)
 To run project after git clone make:
 
 ### `npm install`
 
 to install dev dependencies
 
-### `npm start`
+### To start dev server
 
-to start node server on http://localhost:3002
+Please if you want to start node server on your localhost, to work with SQL DB give me the ip address, and i'll allow access for you. Because now data base is closed for side server 
+requests. And change baseUrl constant address in 'src/helpers/constants.ts' from 'http://145.239.95.160:3002' to 'http://localhost:3002'. Or you can add your own data base with settings in mysqlConnection.js file.
 
 ### `npm run app`
 
