@@ -1,11 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const verifyTokenMiddleWare = require('./middleware');
+const verifyTokenMiddleWare = require('./src/server/middleware');
 const PORT = process.env.PORT || 3002;
 const bodyParser = require('body-parser')
 const app = express();
 const bcrypt = require('bcryptjs');
-const mysqlConnection = require('./mySqlConnection');
+const mysqlConnection = require('./src/server/mySqlConnection');
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');

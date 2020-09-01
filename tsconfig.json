@@ -1,6 +1,6 @@
 {
   "include": [
-    "src/*", "src/server"
+    "src/*", "src/server", "server.js"
   ],
   "compilerOptions": {
     "outDir": "./dist/",
