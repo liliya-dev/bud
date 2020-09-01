@@ -10,4 +10,4 @@ export const zeroState = {
   isPhoneVisible: false,
   isMailVisible: false,
   id: '',
-}
+};
