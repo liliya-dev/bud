@@ -8,7 +8,8 @@ interface Props {
   showModal: (value: boolean) => (void);
 }
 
-export const ModalWindow: React.FC<Props> = ({ showModal }) => {
+const Modal: React.FC<Props> = ({ showModal }) => {
+  console.log('modal')
   const quantity = 50;
   const numbers = useMemo(() => setNumbers(quantity), [quantity]);
   const scrollableEl = useRef(null);
@@ -21,3 +22,5 @@ export const ModalWindow: React.FC<Props> = ({ showModal }) => {
     </div>
   )
 }
+
+export const ModalWindow = React.memo(Modal);

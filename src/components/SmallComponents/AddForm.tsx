@@ -24,7 +24,7 @@ export const AddForm: React.FC<Props> = ({ initialStates, isEdit, finishEditing 
     phone: '',
     additionalPhone: '',
     additionalMail: '',
-  })
+  });
 
   const validateForm = () => {
     const errors = addFormValidation(
@@ -106,7 +106,12 @@ export const AddForm: React.FC<Props> = ({ initialStates, isEdit, finishEditing 
               />
               {
                 !isVisiblePhone &&(
-                  <button className="add-form__add" onClick={() => setIsVisiblePhone(true)}>+</button>   
+                  <button 
+                    className="add-form__add" 
+                    onClick={() => setIsVisiblePhone(true)}
+                  >
+                    +
+                  </button>   
                 )
               }
             </div>
@@ -144,7 +149,12 @@ export const AddForm: React.FC<Props> = ({ initialStates, isEdit, finishEditing 
               />
               {
                 !isVisibleMail && (
-                  <button className="add-form__add" onClick={() => setIsVisibleMail(true)}>+</button>   
+                  <button 
+                    className="add-form__add" 
+                    onClick={() => setIsVisibleMail(true)}
+                  >
+                    +
+                  </button>   
                 )
               }
             </div>

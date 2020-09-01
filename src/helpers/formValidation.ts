@@ -1,3 +1,6 @@
+const regMail = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b/;
+const regPhone = /^\+[0-9]{12}\b/;
+
 export const formValidation = (password: string, confirmedPassword: string, name: string, email: string) => {
   const errors = {
     name: '',
@@ -9,13 +12,13 @@ export const formValidation = (password: string, confirmedPassword: string, name
   if (!(name.trim()).length) {
     errors.name = 'Enter the correct name please'
   }
-  if (!email.includes('@')) {
+  if (!regMail.test(email)) {
     errors.email = 'Enter the correct email please'
   }
   if (password !== confirmedPassword) {
     errors.confirmedPassword = 'Check your password please'
   }
-  if (password.length < 7) {
+  if (password.length < 5) {
     errors.password = 'Password should be at least 6 characters'
   }
 
@@ -35,9 +38,6 @@ export const addFormValidation = (
     additionalPhone: '',
     additionalMail: '',
   }
-
-  const regMail = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b/;
-  const regPhone = /^\+[0-9]{12}\b/;
 
   if (!(name.trim()).length) {
     errors.name = 'Enter the correct name please'

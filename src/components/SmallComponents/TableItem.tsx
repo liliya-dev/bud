@@ -1,15 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getSelectedList } from '../../store';
+import { useDispatch } from 'react-redux';
 import { setSelectedItem, removeSelectedItem } from '../../store/selectedList';
 
 interface Props {
   number: number;
+  isChecked: boolean;
 }
 
-export const TableItem: React.FC<Props> = ({ number }) => {
-  const activeList: number[] = useSelector(getSelectedList);
-  const isChecked = activeList.includes(number);
+const TableItemWithoutMemo: React.FC<Props> = ({ number, isChecked }) => {
   const dispatch = useDispatch();
 
   const selectItem = (ev: any) => {
@@ -39,3 +37,5 @@ export const TableItem: React.FC<Props> = ({ number }) => {
     </tr>
   )
 }
+
+export const TableItem = React.memo(TableItemWithoutMemo);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { User } from '../../interfaces';
 import { UsersList } from './UsersList';
+import { Confirmation } from './Confirmation';
 
 interface Props {
   startEditing: (user: User) => (void)
@@ -11,14 +12,12 @@ export const UsersPage: React.FC<Props> = ({ startEditing }) => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    console.log(';;;;;;;')
     var db = window.openDatabase("users", "1.0", "Test DB", 1000000);
     if (db) {
       db.transaction(function (tx) { 
         return tx.executeSql('SELECT * FROM UserData', [], function (tx, results) {
           if(results) {
             const usersFromDataBase = results.rows;
-            console.log(usersFromDataBase, 12345)
             const preparedUsers: User[] = Object.values(usersFromDataBase);
             setUsers(preparedUsers);
           }
@@ -47,7 +46,6 @@ export const UsersPage: React.FC<Props> = ({ startEditing }) => {
             users={users.filter(user => (user.name + user.surname).includes(search))}
             deleteTemp={deleteTemp}
           />
-
         )
       }
     </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { checkToken } from '../helpers/constants';
 import { fetchLogData } from '../helpers/fetchData';
 import { setAuthorization } from '../store/autorizes';
 import { setRegisteredUser } from '../store/registeredUser';
@@ -20,7 +19,6 @@ export const EnterForm: React.FC = () => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', data.userName);
       dispatch(setAuthorization(true));
-      checkToken(data.token)
       dispatch(setRegisteredUser(data.userName));
       history.push('/page1');
     } else {
@@ -56,7 +54,13 @@ export const EnterForm: React.FC = () => {
           }}
         />
         <p className="form__error"></p>
-        <button className="form__button"type='button' onClick={handleEnter}>Enter</button>
+        <button 
+          className="form__button"
+          type='button' 
+          onClick={handleEnter}
+        >
+          Enter
+        </button>
       </form>
     </div>
   )

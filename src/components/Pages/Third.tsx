@@ -2,44 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { UsersPage } from '../SmallComponents/UsersPage';
 import { AddForm } from '../SmallComponents/AddForm';
 import { User } from '../../interfaces';
-
-const zeroState = {
-  name: '',
-  email: '',
-  surname: '',
-  phone: '',
-  additionalPhone: '',
-  additionalMail: '',
-  isPhoneVisible: false,
-  isMailVisible: false,
-  id: '',
-}
+import { zeroState } from '../../helpers/constants';
+import { handleEditing } from '../../helpers/handleEdit';
 
 export const Third = () => {
   const [activeSection, setActiveSection] = useState('List');
   const [isEdit, setIsEdit] = useState(false);
-  const [initialStates, setInitialStates] = useState(zeroState)
+  const [initialStates, setInitialStates] = useState(zeroState);
 
   const startEditing = (user: User) => {
     setActiveSection('Add');
     setIsEdit(true);
-    console.log(user.phone.split('  '))
-    const phones = user.phone.split('  ');
-    const emails = user.email.split('  ');
-    const secondPhone = phones.length === 2 ? phones[1] : '';
-    const secondMail = emails.length === 2 ? emails[1] : '';
-    
-    setInitialStates({
-      name: user.name,
-      surname: user.surname,
-      phone: phones[0],
-      additionalMail: secondMail,
-      additionalPhone: secondPhone,
-      email: emails[0],
-      isMailVisible: emails.length === 2,
-      isPhoneVisible: phones.length === 2,
-      id: user.id
-    })
+    const newStates = handleEditing(user);
+    setInitialStates(newStates)
   }
 
   const finishEditing = () => {
@@ -54,8 +29,8 @@ export const Third = () => {
         return <AddForm initialStates={initialStates} isEdit={isEdit} finishEditing={finishEditing}/>;
       case 'List': 
         return <UsersPage startEditing={startEditing}/>
-      // default:
-      //   return <AddForm />;
+      default:
+        return <AddForm initialStates={initialStates} isEdit={isEdit} finishEditing={finishEditing}/>;
     }
   }
 
@@ -64,7 +39,6 @@ export const Third = () => {
     db.transaction(function (tx) {   
       tx.executeSql('CREATE TABLE IF NOT EXISTS UserData (id, name, surname, phone, email)');
    });
-    console.log(1111)
   }, [])
   const content = defineComponent();
 

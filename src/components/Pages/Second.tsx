@@ -5,7 +5,7 @@ import { getSelectedList } from '../../store';
 import { TableItem } from '../SmallComponents/TableItem';
 import { cancelAll, selectAll } from '../../store/selectedList';
 
-export const Second = () => {
+const SecondWithoutMemo = () => {
   const quantity = 2000;
   const numbers = useMemo(() => setNumbers(quantity), [quantity]);
   const activeList: number[] = useSelector(getSelectedList);
@@ -42,7 +42,7 @@ export const Second = () => {
           </thead>
           <tbody>
             {
-              numbers.map(number => <TableItem key={Date.now() + number} number={number} />)
+              numbers.map(number => <TableItem key={number} number={number} isChecked={activeList.includes(number)}/>)
             }
           </tbody>
         </table>
@@ -50,3 +50,5 @@ export const Second = () => {
     </div>
   )
 }
+
+export const Second = React.memo(SecondWithoutMemo);

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 import { User } from '../../interfaces';
 
@@ -10,13 +11,15 @@ interface Props {
 export const UserItem: React.FC<Props> = ({ user, deleteTemp, startEditing }) => {
   const handleDelete = () => {
     let db = window.openDatabase("users", "1.0", "Test DB", 1000000);
-    if (db) {
+    let isConfirmed = confirm(`Do you really want to delete ${user.name} ${user.surname}?`)
+    if (db && isConfirmed) {
       db.transaction(function (tx) { 
         tx.executeSql(`DELETE FROM UserData WHERE id=${user.id}`); 
      });
      deleteTemp(user.id);
     }
-  }
+  };
+
   return (
     <tr>
       <td>

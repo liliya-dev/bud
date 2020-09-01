@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { formValidation } from '../helpers/formValidation';
 import { fetchLogData } from '../helpers/fetchData';
-interface Resp {
-  isRegistrationDone: boolean;
-  userName: string;
-}
 
 export const RegisterForm: React.FC = () => {
   const [email, setMail] = useState('');
@@ -36,7 +32,6 @@ export const RegisterForm: React.FC = () => {
     if (data.isRegistrationDone) { 
         history.push('/enter');
       }
-  
   }
 
   return (
@@ -83,7 +78,13 @@ export const RegisterForm: React.FC = () => {
           onChange={(ev) => setConfirmedPassword(ev.target.value)}
         />
         <p className="form__error">{inputErrors.confirmedPassword}</p>
-        <button className="form__button" type='button' onClick={handleSubmit}>Register</button>
+        <button 
+          className="form__button" 
+          type='button' 
+          onClick={handleSubmit}
+        >
+          Register
+        </button>
       </form>
     </div>
   )
