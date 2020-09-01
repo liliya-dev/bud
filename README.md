@@ -1,2 +1,2 @@
- [DEMO LINK](https://liliya-dev.github.io)
+ [DEMO LINK](https://liliya-dev.github.io/bud/)
 
