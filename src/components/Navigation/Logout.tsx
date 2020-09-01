@@ -1,21 +1,17 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { fetchLogDataWithToken } from '../../helpers/fetchData';
-import { getRegisteredUser } from '../../store';
-import { setAuthorization } from '../../store/autorizes';
-import { setRegisteredUser } from '../../store/registeredUser';
 
-export const Logout = () => {
-  const userName = useSelector(getRegisteredUser);
+
+interface Props {
+  name: string;
+  handleLogin: (value: boolean) => (void);
+}
+
+export const Logout: React.FC<Props> = ({ name, handleLogin }) => {
   const history = useHistory();
-  const dispatch = useDispatch();
   const handleLogout = async () => {
-    await fetchLogDataWithToken('POST', '/logout', {}, localStorage.getItem('token'));
-    localStorage.removeItem('token');
+    handleLogin(false);
     localStorage.removeItem('user');
-    dispatch(setAuthorization(false));
-    dispatch(setRegisteredUser(''));
     history.push('/');
   }
 
@@ -28,7 +24,7 @@ export const Logout = () => {
     </li>
     <li className="navigation__item">
         <p className="navigation__text">
-          {userName}
+          {name}
         </p>
     </li>
   </span>

@@ -1,4 +1,7 @@
-export const baseUrl = 'http://145.239.95.160:3002';
+export const onlyUser = {
+  email: 'admin@admin.net',
+  password: 'admin',
+}
 
 export const zeroState = {
   name: '',

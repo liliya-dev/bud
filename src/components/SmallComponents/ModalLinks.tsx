@@ -1,18 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { getSelectedList } from '../../store';
 
 interface Props {
   numbers: number[];
   scrollableEl: any;
+  activeList: number[];
 }
 
 function scrollTo(index: number, container: any) {
   container.scrollTop = index * 55;
 }
 
-export const ModalLinks: React.FC<Props> = ({ numbers, scrollableEl }) => {
-  const activeList: number[] = useSelector(getSelectedList);
+export const ModalLinks: React.FC<Props> = ({ numbers, scrollableEl, activeList }) => {
    
   return (
     <ul className="modal__pages">

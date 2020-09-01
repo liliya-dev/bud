@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { User } from '../../interfaces';
 import { UsersList } from './UsersList';
-import { Confirmation } from './Confirmation';
 
 interface Props {
   startEditing: (user: User) => (void)

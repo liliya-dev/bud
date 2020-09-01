@@ -1,21 +1,21 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setSelectedItem, removeSelectedItem } from '../../store/selectedList';
 
 interface Props {
   number: number;
   isChecked: boolean;
+  removeSelectedItem: (number: number) => (void);
+  setSelectedItem: (number: number) => (void);
 }
 
-const TableItemWithoutMemo: React.FC<Props> = ({ number, isChecked }) => {
-  const dispatch = useDispatch();
-
+const TableItemWithoutMemo: React.FC<Props> = ({ 
+  number, isChecked, setSelectedItem, removeSelectedItem 
+}) => {
   const selectItem = (ev: any) => {
     const value = ev.target.checked;
     if (value) {
-      dispatch(setSelectedItem(number))
+      setSelectedItem(number)
     } else {
-      dispatch(removeSelectedItem(number))
+      removeSelectedItem(number)
     }
   }
 

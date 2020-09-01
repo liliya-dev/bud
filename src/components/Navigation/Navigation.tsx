@@ -1,18 +1,24 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { getAuthorization } from '../../store';
+// import { useSelector } from 'react-redux';
+// import { getAuthorization } from '../../store';
 import { Login } from './Login';
 import { Logout } from './Logout';
 
-export const Navigation: React.FC = () => {
-  const isAuthorized = useSelector(getAuthorization);
+interface Props {
+  isAuthorized: boolean;
+  name: string;
+  handleLogin: (value: boolean) => (void);
+}
+
+export const Navigation: React.FC<Props> = ({ isAuthorized, name, handleLogin }) => {
+  // const isAuthorized = useSelector(getAuthorization);
 
   return (
     <ul className="navigation">   
       {
         !isAuthorized 
           ? <Login/>
-          : <Logout />
+          : <Logout handleLogin={handleLogin} name={name} />
       }
     </ul>
   )

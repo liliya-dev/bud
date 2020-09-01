@@ -11,13 +11,13 @@ export const Login = () => {
         </p>
       </NavLink>
     </li>
-    <li className="navigation__item">
+    {/* <li className="navigation__item">
       <NavLink className="navigation__link" to="/register/" exact>
         <p className="navigation__text">
           Register
         </p>
       </NavLink>
-    </li>
+    </li> */}
   </span>
   )
 }

@@ -1,29 +1,24 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { fetchLogData } from '../helpers/fetchData';
-import { setAuthorization } from '../store/autorizes';
-import { setRegisteredUser } from '../store/registeredUser';
+import { onlyUser } from '../helpers/constants';
 
-export const EnterForm: React.FC = () => {
+interface Props {
+  handleLogin: (value: boolean) => (void);
+}
+
+export const EnterForm: React.FC<Props> = ({ handleLogin }) => {
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
-  const history = useHistory();
   const [err, setErr] = useState('');
+  const history = useHistory();
 
   const handleEnter = async () => {
-    console.log('')
-    const data = await fetchLogData('POST', '/enter', { mail, password })
-    if(data.token) {
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', data.userName);
-      dispatch(setAuthorization(true));
-      dispatch(setRegisteredUser(data.userName));
-      history.push('/page1');
-    } else {
-      console.log('else')
+    if (mail !== onlyUser.email || password !== onlyUser.password) {
       setErr('Check your mail and password')
+    } else {
+      localStorage.setItem('user', mail);
+      handleLogin(true);
+      history.push('/page1');
     }
   }
 

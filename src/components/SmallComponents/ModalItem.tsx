@@ -1,13 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { getSelectedList } from '../../store/index';
 
 interface Props {
   number: number;
+  activeList: number[];
 }
 
-export const ModalItem: React.FC<Props> = ({ number }) => {
-  const activeList: number[] = useSelector(getSelectedList);
+export const ModalItem: React.FC<Props> = ({ number, activeList }) => {
   const isActive = activeList.includes(number);
   return (
     <li 
