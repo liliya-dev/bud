@@ -1,4 +1,4 @@
-export const baseUrl = 'https://radiant-woodland-92651.herokuapp.com';
+export const baseUrl = 'http://localhost:3002';
 
 export const zeroState = {
   name: '',
@@ -10,4 +10,4 @@ export const zeroState = {
   isPhoneVisible: false,
   isMailVisible: false,
   id: '',
-};
+}
