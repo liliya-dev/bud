@@ -36,9 +36,13 @@ export const Third = () => {
 
   useEffect(() => {
     var db = window.openDatabase("users", "1.0", "Test DB", 1000000);
-    db.transaction(function (tx) {   
-      tx.executeSql('CREATE TABLE IF NOT EXISTS UserData (id, name, surname, phone, email)');
-   });
+    if (db) {
+      db.transaction(function (tx) {   
+        tx.executeSql('CREATE TABLE IF NOT EXISTS UserData (id, name, surname, phone, email)');
+     });
+    } else {
+      alert("Your browser doesn't support webSQL")
+    }
   }, [])
   const content = defineComponent();
 
