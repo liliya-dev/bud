@@ -12,7 +12,7 @@ export const fetchLogData = async (method: string, url: string, dataFromUser: an
   )
   const data = await response.json();
   return data;
-}
+};
 
 export const getData = async (url: string) => {
   const response = await fetch(`${baseUrl}${url}`, 
