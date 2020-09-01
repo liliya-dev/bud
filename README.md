@@ -1,5 +1,4 @@
 [DEMO LINK](http://145.239.95.160:3002/#/)
-To run project after git clone make:
 
 ### `npm install`
 
