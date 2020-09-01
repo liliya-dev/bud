@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/build', express.static('build'));
+app.use('/', express.static('build'));
 
 app.post('/enter', function (req, res) {
   const { mail, password } = req.body;
