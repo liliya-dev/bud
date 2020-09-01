@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const verifyTokenMiddleWare = require('./middleware');
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 const bodyParser = require('body-parser')
 const app = express();
 const bcrypt = require('bcryptjs');
@@ -17,6 +17,7 @@ app.use(function (req, res, next) {
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
+app.use('/build', express.static('build'));
 
 app.post('/enter', function (req, res) {
   const { mail, password } = req.body;
@@ -53,9 +54,12 @@ app.post('/logout', verifyTokenMiddleWare, async function (req, res) {
   })
 });
 
+app.get('/', function (req, res) {
+  res.sendFile('/Users/lili4ka/Desktop/projects/bud/build/index.html');
+});
+
 app.post('/register', async function (req, res) {
   const { name, email, password } = req.body;
-  console.log(name, email, password)
   const hashPassword = await bcrypt.hash(password, 10);
   mysqlConnection.query(`SELECT * from users WHERE mail='${email}';`, (err, rows, fields) => {
     if (err) {
